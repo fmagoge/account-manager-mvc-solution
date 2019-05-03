@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Account Manager – Assessment</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen"/>
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+    <link href="../../static/css/spring-core.css"
+          th:href="@{css/spring-core.css}" rel="stylesheet" media="screen"/>
+     
+     <link rel="stylesheet" th:href="@{/css/main.css}"/>     
+          
+</head>
+<body>
+<h1>Account Manager MVC Solution</h1>
+<div class="container">
+    <div th:if="${not #lists.isEmpty(persons)}">
+        <h2>Account Holders</h2>
+        <table class="table table-striped">
+            <tr>                
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Id</th>
+                <!-- <th>List</th>
+                <th>Edit</th>
+                <th>Delete</th> -->
+            </tr>
+            <tr th:each="person : ${persons}">
+                
+                <td th:text="${person.name}"></td>
+                <td th:text="${person.surname}"></td>
+                <td th:text="${person.id_number}"></td>
+                <td><a th:href="${'/person/show/' + person.code}">View</a> </td>
+                <!-- <td><a th:href="${'/entry/edit/' + entry.id}">Edit</a> </td>
+                <td><a th:href="${'/entry/delete/' + entry.id}">Delete</a> </td> -->
+            </tr>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <a href="/entry/new">New Account Holder</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
