@@ -91,10 +91,10 @@ public class Account {
 		this.listOfTransactions = listOfTransactions;
 	}
 
-	@Override
-	public String toString() {
-		return "Account [code=" + code + ", person_code=" + person_code + ", account_number=" + account_number
-				+ ", outstanding_balance=" + outstanding_balance + ", listOfTransactions=" + listOfTransactions + "]";
-	}	
+//	@Override
+//	public String toString() {
+//		return "Account [code=" + code + ", person_code=" + person_code + ", account_number=" + account_number
+//				+ ", outstanding_balance=" + outstanding_balance + ", listOfTransactions=" + listOfTransactions + "]";
+//	}	
 	
 }
