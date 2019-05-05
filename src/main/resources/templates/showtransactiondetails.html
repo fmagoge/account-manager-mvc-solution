@@ -18,12 +18,12 @@
 <div class="container">
 
     <div class="row">
-        <div class="col-sm-6">51012
-            <h2>Show Entry</h2>
+        <div class="col-sm-6">
+            <h2>Transactions on this Account</h2>
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-8">
+        <!-- <div class="col-sm-8">
             <form class="form-horizontal">
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Entry Id:</label>
@@ -44,7 +44,25 @@
                     </div>
                 </div>                
             </form>
-        </div>
+        </div> -->
+        <div th:if="${not #lists.isEmpty(transactions)}">
+        <h2>Transactions</h2>
+        <table class="table table-striped">
+            <tr>                
+                <th>Description</th>
+                <th>Amount</th>
+                <th>Transaction Date</th>
+                <th>Capture Date</th>
+            </tr>
+            <tr th:each="transaction : ${transactions}">
+                
+                <!-- <td th:text="${transaction.description}"></td>
+                <td th:text="${transaction.amount}"></td>
+                <td th:text="${transaction.transaction_date}"></td>
+                <td th:text="${transaction.capture_date}"></td> -->
+            </tr>
+        </table>
+    </div>
     </div>
 </div>
 

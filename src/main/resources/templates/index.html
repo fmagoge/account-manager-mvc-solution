@@ -19,7 +19,12 @@
 </head>
 <body>
 <h1>Account Manager MVC Solution</h1>
-<div class="container">
+<div class="container" align="center">
+	<div class="row">
+        <div class="col-sm-3">
+            <a href="/entry/new">New Account Holder</a>
+        </div>
+    </div>
     <div th:if="${not #lists.isEmpty(persons)}">
         <h2>Account Holders</h2>
         <table class="table table-striped">
@@ -27,9 +32,6 @@
                 <th>Name</th>
                 <th>Surname</th>
                 <th>Id</th>
-                <!-- <th>List</th>
-                <th>Edit</th>
-                <th>Delete</th> -->
             </tr>
             <tr th:each="person : ${persons}">
                 
@@ -37,16 +39,10 @@
                 <td th:text="${person.surname}"></td>
                 <td th:text="${person.id_number}"></td>
                 <td><a th:href="${'/person/show/' + person.code}">View</a> </td>
-                <!-- <td><a th:href="${'/entry/edit/' + entry.id}">Edit</a> </td>
-                <td><a th:href="${'/entry/delete/' + entry.id}">Delete</a> </td> -->
             </tr>
         </table>
     </div>
-    <div class="row">
-        <div class="col-sm-3">
-            <a href="/entry/new">New Account Holder</a>
-        </div>
-    </div>
+    
 </div>
 
 </body>

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.feldmanm.model.Account;
+import com.feldmanm.model.Person;
 import com.feldmanm.model.Transaction;
 import com.feldmanm.service.AccountsService;
 
@@ -33,15 +34,18 @@ public class AccountController {
 			account = accountOptional.get();
 			
 			Set<Transaction> transactions = account.getListOfTransactions();
-//			if (transactions.size() > 0) {
-//				model.addAttribute("transactions", transactions);
-//			}
 		}
 		model.addAttribute("account", account);
 		return "showaccounts";
 	}
 	
 
+	@RequestMapping("/account/new")
+	public String newAccount(Model model) {
+		model.addAttribute("person", new Account());
+		return "redirect:/all";//TODO - 
+	}
+	
 	public void deleteAccount(Account account) {
 		accountsService.deleteAccount(account);
 	}

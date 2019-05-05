@@ -1,6 +1,5 @@
 package com.feldmanm.controller;
 
-import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -13,11 +12,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.feldmanm.model.Account;
 import com.feldmanm.model.Person;
-import com.feldmanm.model.Transaction;
 import com.feldmanm.service.PersonsService;
 
 @Controller
@@ -66,7 +63,7 @@ public class PersonController {
 			person = personOptional.get();
 			Set<Account>accounts = person.getListOfAccounts();
 			
-			if (accounts.size() > 0) { model.addAttribute("accounts", accounts); }			 
+			if (accounts.size() > 0) { model.addAttribute("accounts", accounts); }		 
 
 		}
 
