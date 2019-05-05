@@ -17,11 +17,11 @@ public class TransactionsService {
 	
 	
 	public List<Transaction> getAllTransactions() {
-		return transactionsRepository.findAll();
+		return (List<Transaction>) transactionsRepository.findAll();
 	}
 	
 	public List<Transaction> getTransactionsByAccountId(List<Integer> ids) {
-		return transactionsRepository.findAllById(ids);
+		return (List<Transaction>) transactionsRepository.findAllById(ids);
 	}
 	
 	public Optional<Transaction> getTransactionById(int id) {

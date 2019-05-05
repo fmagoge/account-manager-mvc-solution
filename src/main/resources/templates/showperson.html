@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>CIB Digital Tech – Assessment</title>
+    <title>Account Manager MVC Solution – Assessment</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
     <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
@@ -21,7 +21,7 @@
 
     <div class="row">
         <div class="col-sm-6">
-            <h2>Show Person</h2>
+            <h2>Person Details</h2>
         </div>
     </div>
     <div class="row">
@@ -53,20 +53,13 @@
         <table class="table table-striped">
             <tr>                
                 <th>Account Number</th>
-                <th>Balance</th>
-                <!-- <th>Id</th>
-                <th>List</th>
-                <th>Edit</th>
-                <th>Delete</th> -->
+                <th>Account Details</th>
             </tr>
             <tr th:each="account : ${accounts}">
                 
                 <td th:text="${account.account_number}"></td>
-                <td th:text="${account.outstanding_balance}"></td>
-                <!--<td th:text="${person.id_number}"></td>
-                <td><a th:href="${'/person/show/' + person.code}">View</a> </td>
-                 <td><a th:href="${'/entry/edit/' + entry.id}">Edit</a> </td>
-                <td><a th:href="${'/entry/delete/' + entry.id}">Delete</a> </td> -->
+                <!-- <td><a >View</a> </td> -->
+                <td><a th:href="${'/accounts/show/' + account.code}">View</a> </td> 
             </tr>
         </table>
     </div>
