@@ -15,8 +15,8 @@ public class TransactionsService {
 	@Autowired
 	public TransactionsRepository transactionsRepository;
 	
-	public List<Transaction>findListOfTransactionsByAccountCode(int code){
-		return transactionsRepository.findListOfTransactionsByAccountCode(code);
+	public List<Transaction>findListOfTransactionsByAccountCode(Integer account_code){
+		return transactionsRepository.findListOfTransactionsByAccountCode(account_code);
 	}
 	
 	public List<Transaction> getAllTransactions() {
